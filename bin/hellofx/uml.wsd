@@ -1,0 +1,12 @@
+@startuml
+ class test extends test2{
+     - num : void
+
+     + returnnum()
+ }
+
+class test2 {
+    - num2 :int
+}
+
+@enduml

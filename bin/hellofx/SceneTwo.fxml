@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FA8866;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hellofx.scene2Controller">
+   <children>
+      <VBox fx:id="Menu" prefHeight="800.0" prefWidth="247.0" style="-fx-background-color: #20364D;">
+         <children>
+            <ImageView fx:id="realprofile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Eb2XAL5U8AIRm4Y.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="50.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+               
+            <Label fx:id="realname" alignment="CENTER" prefHeight="90.0" prefWidth="247.0" text="Killua Zoldyck" textFill="WHITE">
+               <font>
+                  <Font name="Century Schoolbook Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="overviewbtn" graphicTextGap="9.0" mnemonicParsing="false" onAction="#overview" prefHeight="50.0" prefWidth="266.0" style="-fx-background-color: #758BA2;" text="Overview" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Schoolbook" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="profilebtn" graphicTextGap="0.0" mnemonicParsing="false" onAction="#profile" prefHeight="50.0" prefWidth="266.0" style="-fx-background-color: #33557A;" text="Profile" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Schoolbook" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: -12;">
+                     <image>
+                        <Image url="@../../user%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="reportbtn" graphicTextGap="30.0" mnemonicParsing="false" onAction="#report" prefHeight="50.0" prefWidth="266.0" style="-fx-background-color: #758BA2;" text="Report data" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Schoolbook" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 17;">
+                     <image>
+                        <Image url="@../../phone-call.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="signoutbtn" alignment="TOP_CENTER" graphicTextGap="18.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="50.0" prefWidth="266.0" style="-fx-background-color: #33557A;" text="Sign Out" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Schoolbook" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 6;">
+                     <image>
+                        <Image url="@../../exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </VBox>
+      <Pane fx:id="reportpane" layoutX="247.0" prefHeight="800.0" prefWidth="956.0" style="-fx-background-color: #2A5A74;">
+         <children>
+            <Label alignment="CENTER" layoutX="18.0" layoutY="30.0" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #12232C; -fx-background-radius: 19;" text="ยืนยันข้อมูลการติดเชื้อ" textFill="WHITE">
+               <font>
+                  <Font name="Century Schoolbook Bold" size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="81.0" layoutY="101.0" opacity="0.8" prefHeight="599.0" prefWidth="794.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 35;">
+               <children>
+                  <ImageView fx:id="showatk" fitHeight="233.0" fitWidth="309.0" layoutX="244.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                       
+                     </image>
+                  </ImageView>
+                  <DatePicker fx:id="dateatk" layoutX="300.0" layoutY="339.0" onAction="#getDate" prefHeight="32.0" prefWidth="194.0" />
+                  <Button fx:id="uploadATK" graphicTextGap="10.0" layoutX="302.0" layoutY="417.0" mnemonicParsing="false" onAction="#uploadatk" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #12232C; -fx-background-radius: 20;" text="Upload ATK" textFill="WHITE">
+                     <font>
+                        <Font name="Century Schoolbook Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../upload.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="senddata" graphicTextGap="10.0" layoutX="302.0" layoutY="489.0" mnemonicParsing="false" onAction="#sendatk" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #12232C; -fx-background-radius: 20;" text="Send Data" textFill="WHITE">
+                     <font>
+                        <Font name="Century Schoolbook" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane fx:id="profilepane" layoutX="247.0" prefHeight="800.0" prefWidth="956.0" style="-fx-background-color: #0E2445;">
+         <children>
+            <Label alignment="CENTER" layoutX="28.0" layoutY="40.0" prefHeight="46.0" prefWidth="224.0" style="-fx-background-color: #33557A; -fx-background-radius: 35;" text="PROFILE" textFill="WHITE">
+               <font>
+                  <Font name="Century Schoolbook Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="errordatainsert" layoutX="52.0" layoutY="665.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <VBox fx:id="showpane" layoutX="46.0" layoutY="147.0" opacity="1" prefHeight="506.0" prefWidth="388.0" spacing="40.0" style="-fx-background-color: #879FC1; -fx-background-radius: 10;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #33557A; -fx-background-radius: 35;" text="แก้ไขข้อมูล" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="38.0" prefWidth="408.0" spacing="40.0">
+                     <children>
+                        <TextField fx:id="name" promptText=" ชื่อ" style="-fx-background-radius: 10;" />
+                        <TextField fx:id="surname" promptText="  นามสกุล" style="-fx-background-radius: 10;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="32.0" prefWidth="160.0" spacing="30.0">
+                     <children>
+                        <CheckBox fx:id="male" mnemonicParsing="false" onAction="#man" text="ชาย" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="female" lineSpacing="5.0" mnemonicParsing="false" onAction="#woman" text="หญิง" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="lgbtq" lineSpacing="5.0" mnemonicParsing="false" onAction="#lgbtq" text="LGBTQ+" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <TextField fx:id="tel" prefHeight="26.0" prefWidth="374.0" promptText=" เบอร์โทรศัพท์" style="-fx-background-radius: 10;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="200.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox prefHeight="40.0" prefWidth="363.0" spacing="30.0">
+                     <children>
+                        <TextField fx:id="address" prefHeight="26.0" prefWidth="307.0" promptText=" ที่อยู่" style="-fx-background-radius: 10;" />
+                        <TextField fx:id="zipcode" prefHeight="26.0" prefWidth="241.0" promptText=" รหัสไปรษณีย์" style="-fx-background-radius: 10;">
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ComboBox fx:id="province" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Button fx:id="submitprofile" mnemonicParsing="false" onAction="#savedataprofile" prefHeight="27.0" prefWidth="113.0" style="-fx-background-radius: 19; -fx-background-color: #4C6FA2;" text="บันทึก" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="250.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutX="509.0" layoutY="147.0" prefHeight="506.0" prefWidth="388.0" style="-fx-background-radius: 10; -fx-background-color: #879FC1;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="168.0" style="-fx-background-color: #33557A; -fx-background-radius: 35;" text="อัปโหลดรูปโปรไฟล์" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="uploadprofilebtn" graphicTextGap="6.0" layoutX="127.0" layoutY="321.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="55.0" prefWidth="137.0" style="-fx-background-color: #4C6FA2; -fx-background-radius: 19;" text="Upload Profile" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="82.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../upload.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Schoolbook Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="saveprofilebtn" graphicTextGap="12.0" layoutX="104.0" layoutY="407.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#saveimage" prefHeight="55.0" prefWidth="182.0" style="-fx-background-color: #4C6FA2; -fx-background-radius: 19;" text="Save Profile" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="77.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Schoolbook Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="showprofile" fitHeight="150.0" fitWidth="150.0" layoutX="119.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../profile.png" />
+                     </image></ImageView>
+               </children>
+            </Pane>
+            <VBox fx:id="changepane" layoutX="46.0" layoutY="147.0" prefHeight="506.0" prefWidth="388.0" spacing="40.0" style="-fx-background-color: #879FC1; -fx-background-radius: 10;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #33557A; -fx-background-radius: 35;" text="ข้อมูลส่วนตัว" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="38.0" prefWidth="362.0" spacing="15.0">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label fx:id="showname" prefHeight="30.0" prefWidth="167.0" text="Label">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="showsurname" prefHeight="30.0" prefWidth="172.0" text="Label">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label fx:id="showgender" prefHeight="30.0" prefWidth="311.0" text="Label">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="showtel" prefHeight="30.0" prefWidth="323.0" text="Label">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="40.0" prefWidth="363.0" spacing="20.0">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label fx:id="showaddress" prefHeight="30.0" prefWidth="183.0" text="Label">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="showzipcode" prefHeight="31.0" prefWidth="158.0" text="Label">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label fx:id="showprovice" prefHeight="30.0" prefWidth="221.0" text="Label">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="changedata" alignment="CENTER" mnemonicParsing="false" onAction="#change" prefHeight="27.0" prefWidth="113.0" style="-fx-background-radius: 19; -fx-background-color: #4C6FA2;" text="แก้ไข" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="250.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      
+                  <Pane fx:id="overviewpane" layoutX="248.0" prefHeight="800.0" prefWidth="956.0" style="-fx-background-color: #758BA2;">
+         <children>
+            <Pane layoutX="-1.0" prefHeight="66.0" prefWidth="956.0" style="-fx-background-color: #152433;">
+               <children>
+                  <Label alignment="CENTER" layoutX="182.0" layoutY="-1.0" prefHeight="68.0" prefWidth="592.0" text="COVID-19 THAILAND DASHBOARD" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Century Schoolbook Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="600.0" layoutY="66.0" text="ยอดผู้ติดเชื้อสูงสุด 10 จังหวัด" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <StackedBarChart fx:id="barchart" layoutX="482.0" layoutY="87.0" legendSide="TOP" prefHeight="350.0" prefWidth="470.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="y" side="LEFT" />
+              </yAxis>
+            </StackedBarChart>
+            <HBox alignment="CENTER" layoutX="6.0" layoutY="270.0" prefHeight="100.0" prefWidth="497.0" spacing="15.0">
+               <children>
+                  <Pane prefHeight="100.0" prefWidth="257.0" style="-fx-background-color: #F8A717; -fx-background-radius: 20;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="-13.0" prefHeight="55.0" prefWidth="247.0" text="ยอดผู้ติดเชื้อภายในประเทศ" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="thai" alignment="CENTER" contentDisplay="TOP" layoutX="53.0" layoutY="23.0" prefHeight="55.0" prefWidth="152.0" text="5000000" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="newthai" alignment="CENTER" layoutX="27.0" layoutY="72.0" prefHeight="27.0" prefWidth="205.0" text="[เพิ่มขึ้น 8 ราย]" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="100.0" prefWidth="205.0" style="-fx-background-color: #666666; -fx-background-radius: 20;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="-9.0" prefHeight="55.0" prefWidth="184.0" text="ยอดผู้เสียชีวิต" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="newdie" alignment="CENTER" layoutX="13.0" layoutY="72.0" prefHeight="27.0" prefWidth="184.0" text="[เพิ่มขึ้น 8 ราย]" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="die" alignment="CENTER" contentDisplay="TOP" layoutX="26.0" layoutY="24.0" prefHeight="55.0" prefWidth="152.0" text="400" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </HBox>
+            <Pane layoutX="10.0" layoutY="107.0" prefHeight="145.0" prefWidth="488.0" style="-fx-background-color: #D40E0E; -fx-background-radius: 70;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="15.0" prefHeight="55.0" prefWidth="211.0" text="จำนวนผู้ติดเชื้อรวม" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="total" alignment="CENTER" contentDisplay="TOP" layoutX="18.0" layoutY="58.0" prefHeight="66.0" prefWidth="224.0" text="5000" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dateupdate" alignment="CENTER" layoutX="244.0" layoutY="42.0" prefHeight="26.0" prefWidth="224.0" text="ข้อมูล ณ วันที่ 26 เมษายน 2565 18.52 น." textFill="WHITE" />
+                  <Label fx:id="newtotal" alignment="CENTER" layoutX="237.0" layoutY="73.0" prefHeight="35.0" prefWidth="224.0" text="[เพิ่มขึ้น 8 ราย]" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fx:id="inforshort" fitHeight="373.0" fitWidth="445.0" layoutX="519.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../s1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inforlong" fitHeight="405.0" fitWidth="330.0" layoutX="93.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../l1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
